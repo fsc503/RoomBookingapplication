@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>TakeABrek</title>
+<h3>Students - Flask SQLAlchemy example</h3>
+{% endblock %}
+
+{% block body %}
+<form action="/bookRoom" method="POST">
+    <label>Username: </label><br><input type="text" name="name" required autofocus placeholder="Your username:" pattern="[a-zA-Z]{3,}" title="Please enter more than 3 letters"><br>
+    <label>Email: </label><br><input type="text" name="email" required placeholder="Your email" pattern="[a-zA-Z]{3,}@[a-zA-Z]{3,}[.]{1,}[a-zA-Z]{2,}" title="Please enter a valid email address"><br>
+    <label>Phone number: </label><br><input type="tel" name="phone" required placeholder="Please enter your phone number" pattern="[0-9]{10}" title="Please enter a valid phone number"><br>
+    <!-- <label for="date">Booking date: </label><br><input type="date" name="date" id="date" min="22/04/2021"><br> -->
+    <label>Number of Guests: </label><br><input type="number" name="numofguests" min="1" max="6"><br>
+    <label>Number of Rooms: </label><br><input type="number" name="rooms" min="1" max="2"><br>
+    <label>Choose the view:</label><br>
+    <select name="view" required>
+        <option value="Mountain View">Mountain View</option>
+        <option value="Garden View">Garden View</option>
+    </select>
+  <br>
+<input type="submit" value="Submit" />
+</form>
+{% endblock %}
